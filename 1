@@ -1,0 +1,18 @@
+number = input("Введите число:").upper()
+issistemy = int(input("Введите степень:"))
+vsistemy = int(input("В какую степень:"))
+a= "0123456789ABCDEF"
+def perevod(number, issistemy, vsistemy, st=len(number)-1, r=0, a= "0123456789ABCDEF"):
+    for i in number:
+        r+=a.find(i)*issistemy**st
+        st-=1
+    if vsistemy == 10:
+        return (r)
+    else:
+        e=''
+        while r>=vsistemy:
+            e+=str(r%vsistemy)
+            r=r//vsistemy 
+            e+=str(r)
+            return(e[::-1])
+print(perevod(number, issistemy, vsistemy))
