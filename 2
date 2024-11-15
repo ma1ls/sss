@@ -1,0 +1,8 @@
+def mask_ip(ip,mask):
+    return(ip&mask)
+ip=input().split('.')
+mask = "255.192.0.0".split('.')
+lst = []
+for i in range(4):
+    lst.append(int(ip[i]) & int(mask[i]))
+print (*lst, sep='.')
